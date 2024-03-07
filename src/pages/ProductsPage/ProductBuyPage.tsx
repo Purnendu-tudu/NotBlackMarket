@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useParams, useNavigate, useAsyncError } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import items from '../../dummyDatabase/items';
 
