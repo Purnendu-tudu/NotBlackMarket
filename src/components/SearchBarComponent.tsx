@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react';
 
-interface SearchTerm {
-    searchTerm : string;
-}
 
 
-
-function SearchBar ({ sendDataToParent}) {
+function SearchBar ({ sendDataToParent}:{sendDataToParent: any}) {
     const [inputData, setInputData] = useState('')
 
     function handeLSearch(){

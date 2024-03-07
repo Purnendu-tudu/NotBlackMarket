@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import SearchBar from '../components/SearchBarComponent'
 
@@ -33,6 +34,11 @@ let items = [
         name: "SweetCorn",
         amount: 400,
         price: 12.00
+    },
+    {
+        name: "CheeseBerry",
+        amount: 50,
+        price: 22.00
     },
 
 ];
@@ -71,7 +77,7 @@ function HomePage() {
                             <h3>Amount: {item?.amount}</h3>
                             <h4>Per Item Price: {item?.price} /-</h4>
                             <div className='flex justify-end items-center p-2'>
-                                <motion.button className='bg-lime-500 rounded-sm  w-24 h-8 text-center hover:bg-lime-300 ' >Buy</motion.button>
+                                <Link to={`/buy/${item?.name}`} className='bg-lime-500 rounded-sm  w-24 h-8 text-center hover:bg-lime-300 ' >Buy</Link>
 
                             </div>
 
