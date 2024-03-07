@@ -9,11 +9,11 @@ function ProductBuyPage() {
     const params = useParams();
     const navigate = useNavigate();
 
-    const [currentId, setCurrentId] = useState(params.productname);
+    
 
     const [customerName, setCustomerName] = useState('');
-    const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
-    const [customerAddress, setCustomerAddresss] = useState('');
+    // const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
+    // const [customerAddress, setCustomerAddresss] = useState('');
     const [productAmount, setProdutAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
