@@ -19,9 +19,9 @@ function ProductBuyPage() {
 
     const itemNames = items.map(item => item?.name.toLowerCase());
 
-    useEffect(() => {
-        setCurrentId(params.productname)
-    }, [params])
+    // useEffect(() => {
+    //     setCurrentId(params.productname)
+    // }, [params])
 
     useEffect(() => {
         if (!itemNames.includes(params.productname?.toLowerCase())) {
