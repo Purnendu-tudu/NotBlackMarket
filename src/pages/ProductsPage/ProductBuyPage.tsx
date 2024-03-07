@@ -12,8 +12,8 @@ function ProductBuyPage() {
     
 
     const [customerName, setCustomerName] = useState('');
-    // const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
-    // const [customerAddress, setCustomerAddresss] = useState('');
+    const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
+    const [customerAddress, setCustomerAddresss] = useState('');
     const [productAmount, setProdutAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
@@ -85,6 +85,14 @@ function ProductBuyPage() {
                                 <div className='flex flex-row justify-between p-2'>
                                     <div>Amount: </div>
                                     <div>{totalPrice}</div>
+                                </div>
+                                <div className='flex flex-row justify-between p-2'>
+                                    <div>Phone: </div>
+                                    <div>{customerPhoneNumber}</div>
+                                </div>
+                                <div className='flex flex-row justify-between p-2'>
+                                    <div>Address: </div>
+                                    <div>{customerAddress}</div>
                                 </div>
 
                             </div>
