@@ -14,8 +14,8 @@ function ProductBuyPage() {
     const [customerName, setCustomerName] = useState('');
     const [customerPhoneNumber, setCustomerPhoneNumber] = useState('');
     const [customerAddress, setCustomerAddresss] = useState('');
-    const [productAmount, setProdutAmount] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [productAmount, setProdutAmount] = useState<number>(0);
+    const [totalPrice, setTotalPrice] = useState<number>(0);
 
     const itemNames = items.map(item => item?.name.toLowerCase());
 
@@ -23,16 +23,20 @@ function ProductBuyPage() {
     //     setCurrentId(params.productname)
     // }, [params])
 
-    useEffect(() => {
-        if (!itemNames.includes(params.productname?.toLowerCase())) {
+    // useEffect(() => {
+    //     if (!itemNames.includes(params.productname?.toLowerCase())) {
 
-            console.log('parameter changed');
-            console.log(!itemNames.includes(params.productname))
+    //         console.log('parameter changed');
+    //         console.log(!itemNames.includes(params.productname))
 
-            navigate('/not-found')
+    //         navigate('/not-found')
 
-        }
-    })
+    //     }
+    // })
+
+    useEffect(()=>{
+        setTotalPrice(productAmount*10);
+    },[productAmount])
 
     return (
         <>
@@ -57,11 +61,11 @@ function ProductBuyPage() {
                                 </div>
                                 <div className='text-white flex flex-col'>
                                     <label>ProductAmount:</label>
-                                    <input type='number' onChange={(e) => setProdutAmount(e.target.valueAsNumber)} className='bg-transparent border-b-2 w-60 border-blue-800 focus:outline-none '></input>
+                                    <input type='number' onChange={(e) => setProdutAmount(Number(e.target.value))} className='bg-transparent border-b-2 w-60 border-blue-800 focus:outline-none '></input>
                                 </div>
                                 <div className='text-white flex flex-col'>
                                     <label>Total Price:</label>
-                                    <input onChange={(e) => setTotalPrice(e.target.valueAsNumber)} defaultValue={productAmount*10} className='bg-transparent border-b-2 w-60 border-blue-800 focus:outline-none '></input>
+                                    <input value={totalPrice} className='bg-transparent border-b-2 w-60 border-blue-800 focus:outline-none '></input>
                                 </div>
                             </div>
                             {/* bill view section */}
@@ -96,6 +100,9 @@ function ProductBuyPage() {
                                 </div>
 
                             </div>
+                        </div>
+                        <div className='flex justify-center p-4'>
+                            <button className='bg-lime-500 p-2 rounded-[5px] font-bold text-white hover:bg-slate-500' >Generate Bill</button>
                         </div>
 
                     </div>
